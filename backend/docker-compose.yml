@@ -1,0 +1,78 @@
+version: "3.8"
+
+services:
+    postgres:
+        image: postgres:alpine
+        ports:
+            - "5432:5432"
+        environment:
+            - POSTGRES_USER=${DB_USER}
+            - POSTGRES_PASSWORD=${DB_PASSWORD}
+            - POSTGRES_DB=${DB_NAME}
+        volumes:
+            - pg_data:/var/lib/postgresql/data
+        networks:
+            - app_network
+
+    redis:
+        image: redis:alpine
+        ports:
+            - "6379:6379"
+        networks:
+            - app_network
+
+    apis:
+        build: ./api
+        # container_name: api_container
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./uploads:/app/uploads
+
+        environment:
+            - REDIS_HOST=redis
+            - REDIS_PORT=6379
+            - DB_HOST=postgres
+            - DB_USER=${DB_USER}
+            - DB_PASS=${DB_PASSWORD}
+            - DB_NAME=${DB_NAME}
+
+        depends_on:
+            - redis
+            - postgres
+
+        networks:
+            - app_network
+
+        env_file:
+            - .env
+
+    worker:
+        build: ./worker
+        volumes:
+            - ./uploads:/app/uploads
+
+        environment:
+            - REDIS_HOST=redis
+            - REDIS_PORT=6379
+            - DB_HOST=postgres
+            - DB_USER=${DB_USER}
+            - DB_PASS=${DB_PASSWORD}
+            - DB_NAME=${DB_NAME}
+
+        depends_on:
+            - redis
+            - postgres
+
+        networks:
+            - app_network
+
+        env_file:
+            - .env
+
+networks:
+    app_network:
+        driver: bridge
+
+volumes:
+    pg_data:
