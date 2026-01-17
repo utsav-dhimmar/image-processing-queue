@@ -1,0 +1,8 @@
+packages:
+    - "app/backend/*"
+    - "app/frontend"
+
+onlyBuiltDependencies:
+    - esbuild
+    - msgpackr-extract
+    - sharp

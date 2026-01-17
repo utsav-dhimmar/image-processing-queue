@@ -1,0 +1,52 @@
+[
+  {
+    "id": 10,
+    "job_id": "86be1a35-849b-47d8-9c56-988470d4af2c",
+    "temp_path": "D:\\codes\\dev\\wtf-engineering\\01-image-processing-queue-system\\backend\\uploads\\raw\\1766329348327__full-moon-forest-night-dark-starry-sky-5k-8k-7952x5304-1684.jpg",
+    "status": "COMPLETED",
+    "operation_id": null,
+    "result_url": "D:\\codes\\dev\\wtf-engineering\\01-image-processing-queue-system\\backend\\uploads\\processed\\resize1766329348327__full-moon-forest-night-dark-starry-sky-5k-8k-7952x5304-1684.jpg",
+    "created_at": "2025-12-21 15:02:28.527367+00",
+    "updated_at": "2025-12-21 15:02:28.864"
+  },
+  {
+    "id": 11,
+    "job_id": "30ec45e2-2a3f-42ab-8f32-360c98a1e8d5",
+    "temp_path": "D:\\codes\\dev\\wtf-engineering\\01-image-processing-queue-system\\backend\\uploads\\raw\\1766329357656__gargantua-black-2560x1440-9621.jpg",
+    "status": "COMPLETED",
+    "operation_id": null,
+    "result_url": "D:\\codes\\dev\\wtf-engineering\\01-image-processing-queue-system\\backend\\uploads\\processed\\resize1766329357656__gargantua-black-2560x1440-9621.jpg",
+    "created_at": "2025-12-21 15:02:38.729494+00",
+    "updated_at": "2025-12-21 15:02:37.721"
+  },
+  {
+    "id": 12,
+    "job_id": "4c01da00-ea73-41a7-9bd4-506844d01d0f",
+    "temp_path": "D:\\codes\\dev\\wtf-engineering\\01-image-processing-queue-system\\backend\\uploads\\raw\\1766329367093__header.jpeg",
+    "status": "COMPLETED",
+    "operation_id": null,
+    "result_url": "D:\\codes\\dev\\wtf-engineering\\01-image-processing-queue-system\\backend\\uploads\\processed\\resize1766329367093__header.jpeg",
+    "created_at": "2025-12-21 15:02:47.657079+00",
+    "updated_at": "2025-12-21 15:02:47.168"
+  },
+  {
+    "id": 13,
+    "job_id": "5fb9c9f7-5665-457e-8edc-3ddf59df4f1e",
+    "temp_path": "D:\\codes\\dev\\wtf-engineering\\01-image-processing-queue-system\\backend\\uploads\\raw\\1766329382138__Screenshot_2025-02-26_140038.png",
+    "status": "COMPLETED",
+    "operation_id": null,
+    "result_url": "D:\\codes\\dev\\wtf-engineering\\01-image-processing-queue-system\\backend\\uploads\\processed\\resize1766329382138__Screenshot_2025-02-26_140038.png",
+    "created_at": "2025-12-21 15:03:02.139071+00",
+    "updated_at": "2025-12-21 15:03:02.366"
+  },
+  {
+    "id": 14,
+    "job_id": "8d2f3906-b42f-4699-abb0-4c6d0734ead5",
+    "temp_path": "D:\\codes\\dev\\wtf-engineering\\01-image-processing-queue-system\\backend\\uploads\\raw\\1766329387601__Screenshot_2025-02-07_194433.png",
+    "status": "COMPLETED",
+    "operation_id": null,
+    "result_url": "D:\\codes\\dev\\wtf-engineering\\01-image-processing-queue-system\\backend\\uploads\\processed\\resize1766329387601__Screenshot_2025-02-07_194433.png",
+    "created_at": "2025-12-21 15:03:08.787996+00",
+    "updated_at": "2025-12-21 15:03:07.771"
+  }
+]
