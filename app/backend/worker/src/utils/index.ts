@@ -1,6 +1,6 @@
 import { addJobs } from "@/queue/index.js";
 import { db, jobTable } from "@app/api/src/db/schema.js";
-import { and, eq, lt, or } from "drizzle-orm";
+import { lt } from "drizzle-orm";
 import fs from "fs/promises";
 import type { TaskFn } from "node-cron";
 
@@ -31,25 +31,15 @@ export const deleteAssetsFromServer: TaskFn = async () => {
 	// from updated at
 
 	const currentTime = new Date();
-	const min = currentTime.getMinutes() - 2;
+	const min = currentTime.getMinutes() - 30;
 	currentTime.setMinutes(min);
 	const dbResponse = await db
 		.select()
 		.from(jobTable)
-		.where(
-			and(
-				lt(jobTable.updated_at, currentTime),
-				or(
-					eq(jobTable.status, "FAILED"),
-					eq(jobTable.status, "COMPLETED"),
-				),
-			),
-		);
+		.where(lt(jobTable.updated_at, currentTime));
 
 	dbResponse.forEach(async ({ result_url, temp_path }) => {
-		if (result_url && temp_path) {
-			await addJobs(result_url);
-			await addJobs(temp_path);
-		}
+		if (result_url) await addJobs(result_url);
+		if (temp_path) await addJobs(temp_path);
 	});
 };

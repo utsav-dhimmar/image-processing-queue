@@ -8,3 +8,4 @@
 *.webp
 *.svg
 **/node_modules
+**/dist
